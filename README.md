@@ -237,23 +237,26 @@ Ask Copilot:
 #editor Explain these tests in plain English. Which tests already pass, and which tests are skipped on purpose for the lab?
 ```
 
-![OrderCalculatorTests.cs open in the editor](image-26.png)
+![Test explanation prompt entered in Copilot Chat](image-26.png)
 
-![alt text](image-27.png)  
+![Copilot showing tool or command approval options](image-27.png)
 
-notice how you need to accept each command. It is not autopilot, although you have that option if you want to try it later. The point is to practice a disciplined workflow where you read, ask for help, then decide whether to accept the suggestion or ask a follow-up question.
+When Copilot wants to run a command or use a tool, pause and read what it is asking to do.
+For this lab, that is a good habit. You are practicing a step-by-step workflow where you stay in control, review suggestions, and decide what to do next.
 
-![alt text](image-28.png)
+![Approval prompt for a Copilot action](image-28.png)
 
-You can choose to use autopilot to allow copilot to go and do everyrthing for you.
+You may also see an autopilot-style option where Copilot can take more actions on its own.
+That can be useful later, but for beginners it is usually better to stay hands-on and review each step.
 
-![alt text](image-29.png)
+![Autopilot option shown in Copilot Chat](image-29.png)
 
-![alt text](image-30.png)
+![Copilot continuing with more automated actions](image-30.png)
 
->> notice how you ar eno longer in control of the workflow. You are letting copilot decide what to do next, which may or may not be the most efficient way to learn.
+If you choose the more automated path, Copilot may decide the next steps for you.
+That can be faster, but it is usually not the best way to learn the workflow for this lab.
 
-![alt text](image-31.png)
+![Copilot running with more automation enabled](image-31.png)
 
 
 
