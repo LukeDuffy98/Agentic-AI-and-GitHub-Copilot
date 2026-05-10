@@ -109,10 +109,19 @@ If this is your first time opening VS Code, follow these steps slowly. You do no
 13. If VS Code asks whether you trust the authors of this folder, choose to trust the workspace.
 ![Trust the workspace](image-13.png)
 
-14. There is no need to update any extensions for this lab, please close that window.
-![Extensions update prompt](image-14.png)
+14. If VS Code suggests updating extensions, you do not need to do that for this lab. Close that window and continue.
+![VS Code extensions update prompt](image-14.png)
 
+15. If you are not already signed in to GitHub inside VS Code, do this now:
 
+   1. Open the Command Palette with `Ctrl+Shift+P`.
+   2. Type `gith` to narrow the list of commands.
+   3. Select `GitHub: Sign in`.
+   4. Complete the sign-in steps in the browser.
+
+   ![Command Palette showing GitHub sign-in options](image-15.png)
+
+After that, make sure the GitHub Copilot extension is available in VS Code.
 
 
 Learning note:
@@ -131,7 +140,8 @@ Learn more:
 This step confirms that the project is in the expected starting state.
 
 1. Open a terminal in VS Code.
-![alt text](image-16.png)
+   If you are not sure how to do that, choose **Terminal > New Terminal** from the top menu.
+![VS Code Terminal menu with New Terminal highlighted](image-16.png)
 
 2. Run these commands:
 
@@ -139,9 +149,10 @@ This step confirms that the project is in the expected starting state.
 cd app
 dotnet test
 ```
->>dotnet test may take a few minutes to run the first time as it restores dependencies and builds the project. That is normal.
 
-![alt text](image-19.png)
+`dotnet test` may take a few minutes the first time you run it. That is normal because .NET may need to restore packages and build the project first.
+
+![Terminal showing dotnet test running in the app folder](image-19.png)
 
 
 What you should see:
@@ -184,9 +195,9 @@ Open Copilot Chat and paste this prompt:
 @workspace Describe this project in simple language. Tell me what each main folder is for and which file I should read first as a beginner.
 ```
 
+![Copilot Chat open in VS Code](image-20.png)
 
-![alt text](image-20.png)
-![alt text](image-21.png)
+![Project summary prompt entered in Copilot Chat](image-21.png)
 
 
 
@@ -197,11 +208,18 @@ Open this file:
 
 - `app/src/StoreApp/OrderCalculator.cs`
 
+![OrderCalculator.cs open in the editor](image-22.png)
+
 Then ask Copilot:
 
 ```text
 #editor Explain this file for a beginner. What does each method do, and which method is intentionally unfinished?
 ```
+![Editor-focused prompt ready in Copilot Chat](image-23.png)
+
+![Copilot response explaining OrderCalculator.cs](image-24.png)
+
+
 
 ### Step 2.3: Inspect the tests
 
