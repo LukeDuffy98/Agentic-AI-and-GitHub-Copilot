@@ -113,15 +113,7 @@ If this is your first time opening VS Code, follow these steps slowly. You do no
 ![Extensions update prompt](image-14.png)
 
 
-15. If you are not already signed in to GitHub inside VS Code, do this now:
 
-   1. Open the Command Palette with `Ctrl+Shift+P`.
-   2. Type `gith` to filter the command list.
-   ![Command Palette filtered for GitHub](image-15.png)
-   3. Select `GitHub: Sign in`.
-   4. Complete the sign-in steps in the browser.
-
-After that, make sure the GitHub Copilot extension is available.
 
 Learning note:
 
@@ -139,12 +131,18 @@ Learn more:
 This step confirms that the project is in the expected starting state.
 
 1. Open a terminal in VS Code.
+![alt text](image-16.png)
+
 2. Run these commands:
 
 ```powershell
 cd app
 dotnet test
 ```
+>>dotnet test may take a few minutes to run the first time as it restores dependencies and builds the project. That is normal.
+
+![alt text](image-19.png)
+
 
 What you should see:
 
@@ -185,6 +183,13 @@ Open Copilot Chat and paste this prompt:
 ```text
 @workspace Describe this project in simple language. Tell me what each main folder is for and which file I should read first as a beginner.
 ```
+
+
+![alt text](image-20.png)
+![alt text](image-21.png)
+
+
+
 
 ### Step 2.2: Read the main code file
 
