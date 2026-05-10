@@ -291,6 +291,10 @@ Find this method:
 
 Right now, it throws a `NotImplementedException`. That means the method exists, but it does not do any real work yet.
 
+![OrderCalculator.cs showing NotImplementedException](image-32.png)
+
+
+
 Learning note:
 
 - A stub is a placeholder method that has not been finished.
@@ -305,7 +309,11 @@ Find this test:
 
 - `FormatPackingSlip_ReturnsOneLinePerItem`
 
+![FormatPackingSlip_ReturnsOneLinePerItem test](image-33.png)
+
+
 Remove the `Skip = ...` part from the `[Fact]` attribute for that test so the test can run.
+
 
 It should change from this:
 
@@ -318,6 +326,8 @@ to this:
 ```csharp
 [Fact]
 ```
+![FormatPackingSlip_ReturnsOneLinePerItem test](image-34.png)
+
 
 ### Step 3.2: Run only that test
 
@@ -326,8 +336,13 @@ Run:
 ```powershell
 dotnet test --filter FormatPackingSlip
 ```
+![FormatPackingSlip test running](image-35.png)
+
+
 
 It should fail. That is expected.
+
+
 
 Why failure is useful:
 
