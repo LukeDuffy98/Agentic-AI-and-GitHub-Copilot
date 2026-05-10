@@ -337,9 +337,20 @@ Run:
 dotnet test --filter FormatPackingSlip
 ```
 
-![alt text](image-36.png)  
+![Terminal showing the FormatPackingSlip test command](image-36.png)
 
-It should fail. That is expected.
+The test should fail. That is expected.
+
+What you want here is a real test failure, not a filter error.
+
+- Good result: the test is found, runs, and fails because `FormatPackingSlip` is not implemented yet.
+- Not the right result: `No test matches the given testcase filter ...`
+
+If you see `No test matches the given testcase filter ...`, the filter text is wrong or the test is still skipped. Check that:
+
+- you ran `dotnet test --filter FormatPackingSlip`
+- the test name is `FormatPackingSlip_ReturnsOneLinePerItem`
+- you removed the `Skip = ...` part so the attribute is just `[Fact]`
 
 
 
@@ -364,6 +375,9 @@ If you get stuck, use this prompt:
 #selection Implement this method so it returns a packing slip string with a title and numbered lines for each item. Keep the output deterministic and handle null input.
 ```
 
+![alt text](image-37.png)
+
+
 What to watch for in the answer:
 
 - Does the suggested code handle `null` input?
@@ -374,6 +388,13 @@ Learning note:
 
 - Deterministic output means the same input always produces the same output.
 - Deterministic code is easier to test because the result is predictable.
+
+>> if youhad autopilot enabled, you will see various iterations of code ad implemtatons ans testing going on. That is a more automated workflow, but for learning purposes it is usually better to stay in control and review each step.
+
+>> Think about coding stabndards and how wouyld yo keep on track wioth organisation satndrads and best practices when you are coding. You can ask copilot to help you with that as well.
+
+>> Copilot instruction files can be a greeat help butslao consider teh actions and otehr dependencey and code scannig tools at your disposal to help you with that.
+
 
 ### Step 3.4: Re-run the test
 
