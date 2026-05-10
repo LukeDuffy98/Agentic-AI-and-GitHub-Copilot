@@ -66,7 +66,40 @@ That is the workflow you will practice here.
 
 ## Part 0: Open the project and sign in to Copilot
 
-1. Open VS Code.
+1. Open VS Code. 
+![alt text](image.png)
+
+1. Becuase its the first time its launched you will nee to sign in . as  you have already created a github account before teh session you can click on the sign in button and follow the instructions to sign in to your github account.
+![alt text](image-1.png)
+
+1. Enter you username and password and click on the sign in button to complete the sign in process.
+![alt text](image-2.png)
+
+![alt text](image-3.png)
+
+1. verify device as requested by github and click on the continue button to complete the sign in process.
+![alt text](image-4.png)
+
+1. authorize Visual Studio Code to access your account by clicking on the authorize button and continue with the process.
+![alt text](image-5.png)
+
+1. choose the "always allow" option to avoid being asked again in the future and click on the open option to complete the sign in process.
+![alt text](image-6.png)
+
+1. you may need to close borwser. 
+
+1. if prompted in lab machione, choose to use weaker encryption to avoid issues with the lab environment.
+![alt text](image-7.png)
+
+1. if necessary choose layout for VS Code. you can choose the default layout for this lab.
+![alt text](image-8.png)
+
+1. in the build with ai agents screen we suggest you choose "ask" and tehn "Get Starteed"
+
+![alt text](image-10.png)
+
+
+
 2. Open this repository folder.
 3. If prompted, trust the workspace.
 4. Sign in to GitHub in VS Code.
