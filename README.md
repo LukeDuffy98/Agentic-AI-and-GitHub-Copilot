@@ -99,6 +99,13 @@ That is the workflow you will practice here.
 ![alt text](image-10.png)
 
 
+1. from the file menu, choose open workspace and then open the folder that contains this repository.
+![alt text](image-11.png)
+
+1. Choose "workspace" and open the folder that contains this repository.
+![alt text](image-12.png)
+
+
 
 2. Open this repository folder.
 3. If prompted, trust the workspace.
