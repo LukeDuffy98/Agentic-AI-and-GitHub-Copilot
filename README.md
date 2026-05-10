@@ -378,6 +378,9 @@ If you get stuck, use this prompt:
 ![Copilot prompt for implementing FormatPackingSlip](image-37.png)
 
 
+>> Make sure to click the keep button to make you chnages persistent in the file. If you click the discard button, the code will not be added to the file and you will need to ask again.
+
+
 What to watch for in the answer:
 
 - Does the suggested code handle `null` input?
@@ -413,6 +416,9 @@ Then run the full suite again:
 dotnet test
 ```
 
+![alt text](image-38.png)
+
+
 Expected result now:
 
 - 4 tests pass
@@ -438,6 +444,10 @@ Find this test:
 
 - `CalculateDiscount_GivesTenPercentDiscountToLargeLoyaltyOrders`
 
+![alt text](image-39.png)
+
+
+
 This test is also skipped on purpose.
 
 ### Step 4.1: Turn on the bug-finding test
@@ -454,6 +464,13 @@ to:
 [Fact]
 ```
 
+![alt text](image-40.png)
+
+From the file menu choose save all
+
+![alt text](image-41.png)
+
+
 ### Step 4.2: Run only the discount test
 
 Run:
@@ -462,7 +479,9 @@ Run:
 dotnet test --filter CalculateDiscount
 ```
 
-It should fail.
+![alt text](image-42.png)
+
+**It should fail.**
 
 This is the moment where the test becomes evidence. The failure message tells you what the code did, what the test expected, and which behavior needs attention.
 
@@ -470,26 +489,32 @@ This is the moment where the test becomes evidence. The failure message tells yo
 
 Open `app/src/StoreApp/OrderCalculator.cs` and look at `CalculateDiscount`.
 
+![alt text](image-43.png)
+
+
 Ask Copilot:
 
 ```text
 I have a failing test named CalculateDiscount_GivesTenPercentDiscountToLargeLoyaltyOrders. Look at the current CalculateDiscount method and suggest the smallest code change needed to make the test pass.
 ```
 
+![alt text](image-44.png)
+
+
 ### Step 4.4: Fix the bug
 
 Apply the smallest fix you can.
 
-Tip: the test name tells you exactly what behavior is expected.
+![alt text](image-45.png)
 
-Useful debugging habit:
+>> Because Copilot is non-deterministic, we may see slightly different behaviors. Notice here it is instructing us to make the change and not actually making the change itself. That is a good reminder that you should always review the suggestions and understand them before accepting them.
 
-1. Read the test name.
-2. Read the expected value.
-3. Read the actual value.
-4. Open only the method most directly responsible.
-5. Change one thing.
-6. Re-run the same test.
+>> You may see different suggestions from Copilot. The important thing is to understand the test, understand the code, and make a small change that is supported by the evidence you have.
+
+![alt text](image-46.png)
+
+Save changes.
+
 
 ### Step 4.5: Confirm the fix
 
@@ -499,6 +524,8 @@ Run:
 dotnet test --filter CalculateDiscount
 dotnet test
 ```
+
+![alt text](image-47.png)
 
 Expected result now:
 
@@ -528,11 +555,17 @@ in `app/src/StoreApp/OrderCalculator.cs`
 
 Select the method body and use this prompt:
 
+![alt text](image-48.png)
+
 ```text
 #selection Refactor this method to improve readability without changing behavior. Keep it beginner-friendly and avoid unnecessary complexity.
 ```
+![alt text](image-49.png)
+
 
 ### Step 5.2: Review the suggestion before accepting it
+
+![alt text](image-51.png)
 
 Check for these things:
 
@@ -544,6 +577,9 @@ Good rule:
 
 - If a refactor makes the code harder to explain, it is probably not a good beginner-friendly refactor.
 
+If you are happy with the suggestion, accept it to apply the change to the file.
+![alt text](image-50.png)
+
 ### Step 5.3: Run the tests again
 
 Run:
@@ -551,6 +587,8 @@ Run:
 ```powershell
 dotnet test
 ```
+![alt text](image-52.png)
+
 
 If the tests still pass, your refactor preserved behavior.
 
