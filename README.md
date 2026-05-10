@@ -375,7 +375,7 @@ If you get stuck, use this prompt:
 #selection Implement this method so it returns a packing slip string with a title and numbered lines for each item. Keep the output deterministic and handle null input.
 ```
 
-![alt text](image-37.png)
+![Copilot prompt for implementing FormatPackingSlip](image-37.png)
 
 
 What to watch for in the answer:
@@ -389,11 +389,12 @@ Learning note:
 - Deterministic output means the same input always produces the same output.
 - Deterministic code is easier to test because the result is predictable.
 
->> if youhad autopilot enabled, you will see various iterations of code ad implemtatons ans testing going on. That is a more automated workflow, but for learning purposes it is usually better to stay in control and review each step.
+Extra learning:
 
->> Think about coding stabndards and how wouyld yo keep on track wioth organisation satndrads and best practices when you are coding. You can ask copilot to help you with that as well.
-
->> Copilot instruction files can be a greeat help butslao consider teh actions and otehr dependencey and code scannig tools at your disposal to help you with that.
+- If you enabled a more automated Copilot workflow, you may see several code changes, test runs, or follow-up actions happen in sequence.
+- That can be useful, but for this lab it is usually better to stay in control and review each step as you learn.
+- As you write code, keep coding standards and team expectations in mind. You can ask Copilot to help you check for readability, consistency, and best practices.
+- Copilot instruction files can help guide suggestions, but you should also use tests, code review habits, and any scanning or validation tools available in your environment.
 
 
 ### Step 3.4: Re-run the test
