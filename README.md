@@ -32,87 +32,147 @@ If those terms are new, here is the short version:
 - VS Code is the editor you will use for the lab.
 - The .NET SDK is the toolset that builds and tests the C# code.
 - GitHub Copilot is the AI assistant you will use inside VS Code.
+ 
 
 Learn more:
 
 - [Set up GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/setup)
 - [GitHub Copilot overview for VS Code](https://code.visualstudio.com/docs/copilot/overview)
+ 
 
 ## Learning goals
 
 By the end of the lab, you should be able to:
 
+ 
 - ask Copilot to explain code in a useful way
 - use tests to confirm whether code works
 - make a small change with Copilot support instead of guessing
 - understand the basic idea of MCP tool use
 
+ 
 ## How long this lab takes
 
 Plan for about 60 minutes.
 
 ## Important idea before you begin
+ 
 
 You do not need to understand every file before you start.
 
 In real software work, developers often begin by:
 
+ 
 1. running the tests
 2. reading one small part of the code
 3. making one change
 4. running the tests again
 
+ 
 That is the workflow you will practice in this lab.
 
 ## Part 0: Open the project and sign in to Copilot
 
 If this is your first time opening VS Code, follow these steps slowly. You do not need to memorize anything yet.
 
-1. Open VS Code.
+
+### Step 0.1: Open VS Code
+
 ![VS Code welcome screen](assets/screenshots/part0-01-vscode-welcome.png)
 
-2. If VS Code asks you to sign in, choose the GitHub sign-in option.
+
+### Step 0.2: Choose the GitHub sign-in option
+
+If VS Code asks you to sign in, choose the GitHub sign-in option.
+
 ![GitHub sign-in prompt](assets/screenshots/part0-02-github-signin-prompt.png)
 
-3. Enter your GitHub username and password when prompted.
+
+### Step 0.3: Enter your GitHub sign-in details
+
+Enter your GitHub username and password when prompted.
+
 ![GitHub sign-in page](assets/screenshots/part0-03-github-signin-page.png)
+
 
 ![GitHub sign-in continuation](assets/screenshots/part0-04-github-signin-continuation.png)
 
-4. If GitHub asks you to verify your device, complete that step and continue.
+### Step 0.4: Complete device verification if GitHub asks for it
+
+If GitHub asks you to verify your device, complete that step and continue.
+
 ![GitHub device verification](assets/screenshots/part0-05-github-device-verification.png)
 
-5. When asked, authorize Visual Studio Code to access your GitHub account.
+
+### Step 0.5: Authorize Visual Studio Code
+
+When asked, authorize Visual Studio Code to access your GitHub account.
+
 ![Authorize VS Code](assets/screenshots/part0-06-authorize-vscode.png)
 
-6. If you see an option such as "Always allow", it is fine to choose it for this lab.
+### Step 0.6: Choose "Always allow" if you see it
+
+
+If you see an option such as "Always allow", it is fine to choose it for this lab.
+
 ![Always allow prompt](assets/screenshots/part0-07-always-allow-prompt.png)
 
-7. After the browser step finishes, return to VS Code. You may need to close the browser tab.
+### Step 0.7: Return to VS Code
 
-8. If the lab machine prompts you about encryption, choose the weaker encryption option if your instructor told you to do that for this environment.
+After the browser step finishes, return to VS Code. You may need to close the browser tab.
+ 
+
+### Step 0.8: Handle the encryption prompt if it appears
+
+If the lab machine prompts you about encryption, choose the weaker encryption option if your instructor told you to do that for this environment.
+
 ![Encryption prompt](assets/screenshots/part0-08-encryption-prompt.png)
 
-9. If VS Code asks you to choose a layout, the default layout is fine.
+### Step 0.9: Choose a layout if prompted
+
+ 
+If VS Code asks you to choose a layout, the default layout is fine.
+
 ![VS Code layout selection](assets/screenshots/part0-09-layout-selection.png)
 
-10. If you see the "Build with AI agents" screen, choose `Ask`, then select `Get Started`.
+ 
+### Step 0.10: Choose the starter AI agents option
+
+If you see the "Build with AI agents" screen, choose `Ask`, then select `Get Started`.
 
 ![Build with AI agents screen](assets/screenshots/part0-10-build-with-ai-agents.png)
 
-11. In VS Code, open the folder for this repository by using **File > Open Folder**.
+### Step 0.11: Open the lab folder in VS Code
+ 
+
+In VS Code, open the folder for this repository by using **File > Open Folder**.
+
 ![Open Folder menu](assets/screenshots/part0-11-open-folder-menu.png)
 
-12. Select the folder that contains this repository and open it.
+### Step 0.12: Select the repository folder
+
+Select the folder that contains this repository and open it.
+
 ![Choose the workspace folder](assets/screenshots/part0-12-select-workspace-folder.png)
 
-13. If VS Code asks whether you trust the authors of this folder, choose to trust the workspace.
+### Step 0.13: Trust the workspace
+
+If VS Code asks whether you trust the authors of this folder, choose to trust the workspace.
+
 ![Trust the workspace](assets/screenshots/part0-13-trust-workspace.png)
 
-14. If VS Code suggests updating extensions, you do not need to do that for this lab. Close that window and continue.
+ 
+### Step 0.14: Skip extension updates for now
+
+If VS Code suggests updating extensions, you do not need to do that for this lab. Close that window and continue.
+
 ![VS Code extensions update prompt](assets/screenshots/part0-14-extensions-update-prompt.png)
 
-15. If you are not already signed in to GitHub inside VS Code, do this now:
+ 
+### Step 0.15: Sign in from the Command Palette if needed
+
+If you are not already signed in to GitHub inside VS Code, do this now:
+ 
 
    1. Open the Command Palette with `Ctrl+Shift+P`.
    2. Type `gith` to narrow the list of commands.
@@ -120,6 +180,7 @@ If this is your first time opening VS Code, follow these steps slowly. You do no
    4. Complete the sign-in steps in the browser.
 
    ![Command Palette showing GitHub sign-in options](assets/screenshots/part0-15-command-palette-github-signin.png)
+ 
 
 After that, make sure the GitHub Copilot extension is available in VS Code.
 
@@ -129,6 +190,7 @@ Learning note:
 - An extension adds features to VS Code.
 - GitHub Copilot appears both as inline code suggestions and as chat.
 - Chat is useful when you need an explanation or a plan. Inline suggestions are faster when you already know roughly what you want to write.
+ 
 
 Learn more:
 
@@ -139,11 +201,16 @@ Learn more:
 
 This step confirms that the project is in the expected starting state.
 
-1. Open a terminal in VS Code.
+### Step 1.1: Open a terminal in VS Code
+
+Open a terminal in VS Code.
    If you are not sure how to do that, choose **Terminal > New Terminal** from the top menu.
+
 ![VS Code Terminal menu with New Terminal highlighted](assets/screenshots/part1-01-open-terminal.png)
 
-2. Run these commands:
+### Step 1.2: Run the baseline tests
+
+Run these commands:
 
 ```powershell
 cd app
@@ -215,6 +282,7 @@ Then ask Copilot:
 ```text
 #editor Explain this file for a beginner. What does each method do, and which method is intentionally unfinished?
 ```
+
 ![Editor-focused prompt ready in Copilot Chat](assets/screenshots/part2-04-editor-prompt-ordercalculator.png)
 
 ![Copilot response explaining OrderCalculator.cs](assets/screenshots/part2-05-ordercalculator-explanation.png)
@@ -326,6 +394,7 @@ to this:
 ```csharp
 [Fact]
 ```
+
 ![FormatPackingSlip_ReturnsOneLinePerItem test](assets/screenshots/part3-03-formatpackingslip-test-enabled.png)
 
 
@@ -565,6 +634,7 @@ in `app/src/StoreApp/OrderCalculator.cs`
 ```text
 #selection Refactor this method to improve readability without changing behavior. Keep it beginner-friendly and avoid unnecessary complexity.
 ```
+
 ![Refactor prompt entered in Copilot Chat](assets/screenshots/part5-02-refactor-prompt.png)
 
 
@@ -583,6 +653,7 @@ Good rule:
 - If a refactor makes the code harder to explain, it is probably not a good beginner-friendly refactor.
 
 If you are happy with the suggestion, accept it to apply the change to the file.
+
 ![Refactor suggestion applied in the editor](assets/screenshots/part5-04-refactor-applied.png)
 
 ### Step 5.3: Run the tests again
