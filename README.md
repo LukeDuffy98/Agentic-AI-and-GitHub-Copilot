@@ -227,11 +227,35 @@ Open this file:
 
 - `app/tests/StoreApp.Tests/OrderCalculatorTests.cs`
 
+![OrderCalculatorTests.cs open in the editor](image-25.png)
+
+
+
 Ask Copilot:
 
 ```text
 #editor Explain these tests in plain English. Which tests already pass, and which tests are skipped on purpose for the lab?
 ```
+
+![OrderCalculatorTests.cs open in the editor](image-26.png)
+
+![alt text](image-27.png)  
+
+notice how you need to accept each command. It is not autopilot, although you have that option if you want to try it later. The point is to practice a disciplined workflow where you read, ask for help, then decide whether to accept the suggestion or ask a follow-up question.
+
+![alt text](image-28.png)
+
+You can choose to use autopilot to allow copilot to go and do everyrthing for you.
+
+![alt text](image-29.png)
+
+![alt text](image-30.png)
+
+>> notice how you ar eno longer in control of the workflow. You are letting copilot decide what to do next, which may or may not be the most efficient way to learn.
+
+![alt text](image-31.png)
+
+
 
 Why this matters:
 
