@@ -336,9 +336,8 @@ Run:
 ```powershell
 dotnet test --filter FormatPackingSlip
 ```
-![FormatPackingSlip test running](image-35.png)
 
-
+![alt text](image-36.png)  
 
 It should fail. That is expected.
 
