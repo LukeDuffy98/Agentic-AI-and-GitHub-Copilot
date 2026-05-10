@@ -69,48 +69,48 @@ That is the workflow you will practice in this lab.
 If this is your first time opening VS Code, follow these steps slowly. You do not need to memorize anything yet.
 
 1. Open VS Code.
-![VS Code welcome screen](image.png)
+![VS Code welcome screen](assets/screenshots/part0-01-vscode-welcome.png)
 
 2. If VS Code asks you to sign in, choose the GitHub sign-in option.
-![GitHub sign-in prompt](image-1.png)
+![GitHub sign-in prompt](assets/screenshots/part0-02-github-signin-prompt.png)
 
 3. Enter your GitHub username and password when prompted.
-![GitHub sign-in page](image-2.png)
+![GitHub sign-in page](assets/screenshots/part0-03-github-signin-page.png)
 
-![GitHub sign-in continuation](image-3.png)
+![GitHub sign-in continuation](assets/screenshots/part0-04-github-signin-continuation.png)
 
 4. If GitHub asks you to verify your device, complete that step and continue.
-![GitHub device verification](image-4.png)
+![GitHub device verification](assets/screenshots/part0-05-github-device-verification.png)
 
 5. When asked, authorize Visual Studio Code to access your GitHub account.
-![Authorize VS Code](image-5.png)
+![Authorize VS Code](assets/screenshots/part0-06-authorize-vscode.png)
 
 6. If you see an option such as "Always allow", it is fine to choose it for this lab.
-![Always allow prompt](image-6.png)
+![Always allow prompt](assets/screenshots/part0-07-always-allow-prompt.png)
 
 7. After the browser step finishes, return to VS Code. You may need to close the browser tab.
 
 8. If the lab machine prompts you about encryption, choose the weaker encryption option if your instructor told you to do that for this environment.
-![Encryption prompt](image-7.png)
+![Encryption prompt](assets/screenshots/part0-08-encryption-prompt.png)
 
 9. If VS Code asks you to choose a layout, the default layout is fine.
-![VS Code layout selection](image-8.png)
+![VS Code layout selection](assets/screenshots/part0-09-layout-selection.png)
 
 10. If you see the "Build with AI agents" screen, choose `Ask`, then select `Get Started`.
 
-![Build with AI agents screen](image-10.png)
+![Build with AI agents screen](assets/screenshots/part0-10-build-with-ai-agents.png)
 
 11. In VS Code, open the folder for this repository by using **File > Open Folder**.
-![Open Folder menu](image-11.png)
+![Open Folder menu](assets/screenshots/part0-11-open-folder-menu.png)
 
 12. Select the folder that contains this repository and open it.
-![Choose the workspace folder](image-12.png)
+![Choose the workspace folder](assets/screenshots/part0-12-select-workspace-folder.png)
 
 13. If VS Code asks whether you trust the authors of this folder, choose to trust the workspace.
-![Trust the workspace](image-13.png)
+![Trust the workspace](assets/screenshots/part0-13-trust-workspace.png)
 
 14. If VS Code suggests updating extensions, you do not need to do that for this lab. Close that window and continue.
-![VS Code extensions update prompt](image-14.png)
+![VS Code extensions update prompt](assets/screenshots/part0-14-extensions-update-prompt.png)
 
 15. If you are not already signed in to GitHub inside VS Code, do this now:
 
@@ -119,7 +119,7 @@ If this is your first time opening VS Code, follow these steps slowly. You do no
    3. Select `GitHub: Sign in`.
    4. Complete the sign-in steps in the browser.
 
-   ![Command Palette showing GitHub sign-in options](image-15.png)
+   ![Command Palette showing GitHub sign-in options](assets/screenshots/part0-15-command-palette-github-signin.png)
 
 After that, make sure the GitHub Copilot extension is available in VS Code.
 
@@ -141,7 +141,7 @@ This step confirms that the project is in the expected starting state.
 
 1. Open a terminal in VS Code.
    If you are not sure how to do that, choose **Terminal > New Terminal** from the top menu.
-![VS Code Terminal menu with New Terminal highlighted](image-16.png)
+![VS Code Terminal menu with New Terminal highlighted](assets/screenshots/part1-01-open-terminal.png)
 
 2. Run these commands:
 
@@ -152,7 +152,7 @@ dotnet test
 
 `dotnet test` may take a few minutes the first time you run it. That is normal because .NET may need to restore packages and build the project first.
 
-![Terminal showing dotnet test running in the app folder](image-19.png)
+![Terminal showing dotnet test running in the app folder](assets/screenshots/part1-02-dotnet-test-running.png)
 
 
 What you should see:
@@ -195,9 +195,9 @@ Open Copilot Chat and paste this prompt:
 @workspace Describe this project in simple language. Tell me what each main folder is for and which file I should read first as a beginner.
 ```
 
-![Copilot Chat open in VS Code](image-20.png)
+![Copilot Chat open in VS Code](assets/screenshots/part2-01-copilot-chat-open.png)
 
-![Project summary prompt entered in Copilot Chat](image-21.png)
+![Project summary prompt entered in Copilot Chat](assets/screenshots/part2-02-project-summary-prompt.png)
 
 
 
@@ -208,16 +208,16 @@ Open this file:
 
 - `app/src/StoreApp/OrderCalculator.cs`
 
-![OrderCalculator.cs open in the editor](image-22.png)
+![OrderCalculator.cs open in the editor](assets/screenshots/part2-03-ordercalculator-open.png)
 
 Then ask Copilot:
 
 ```text
 #editor Explain this file for a beginner. What does each method do, and which method is intentionally unfinished?
 ```
-![Editor-focused prompt ready in Copilot Chat](image-23.png)
+![Editor-focused prompt ready in Copilot Chat](assets/screenshots/part2-04-editor-prompt-ordercalculator.png)
 
-![Copilot response explaining OrderCalculator.cs](image-24.png)
+![Copilot response explaining OrderCalculator.cs](assets/screenshots/part2-05-ordercalculator-explanation.png)
 
 
 
@@ -227,7 +227,7 @@ Open this file:
 
 - `app/tests/StoreApp.Tests/OrderCalculatorTests.cs`
 
-![OrderCalculatorTests.cs open in the editor](image-25.png)
+![OrderCalculatorTests.cs open in the editor](assets/screenshots/part2-06-ordercalculatortests-open.png)
 
 
 
@@ -237,26 +237,26 @@ Ask Copilot:
 #editor Explain these tests in plain English. Which tests already pass, and which tests are skipped on purpose for the lab?
 ```
 
-![Test explanation prompt entered in Copilot Chat](image-26.png)
+![Test explanation prompt entered in Copilot Chat](assets/screenshots/part2-07-tests-explanation-prompt.png)
 
-![Copilot showing tool or command approval options](image-27.png)
+![Copilot showing tool or command approval options](assets/screenshots/part2-08-copilot-approval-options.png)
 
 When Copilot wants to run a command or use a tool, pause and read what it is asking to do.
 For this lab, that is a good habit. You are practicing a step-by-step workflow where you stay in control, review suggestions, and decide what to do next.
 
-![Approval prompt for a Copilot action](image-28.png)
+![Approval prompt for a Copilot action](assets/screenshots/part2-09-approval-prompt.png)
 
 You may also see an autopilot-style option where Copilot can take more actions on its own.
 That can be useful later, but for beginners it is usually better to stay hands-on and review each step.
 
-![Autopilot option shown in Copilot Chat](image-29.png)
+![Autopilot option shown in Copilot Chat](assets/screenshots/part2-10-autopilot-option.png)
 
-![Copilot continuing with more automated actions](image-30.png)
+![Copilot continuing with more automated actions](assets/screenshots/part2-11-automated-actions.png)
 
 If you choose the more automated path, Copilot may decide the next steps for you.
 That can be faster, but it is usually not the best way to learn the workflow for this lab.
 
-![Copilot running with more automation enabled](image-31.png)
+![Copilot running with more automation enabled](assets/screenshots/part2-12-more-automation.png)
 
 
 
@@ -291,7 +291,7 @@ Find this method:
 
 Right now, it throws a `NotImplementedException`. That means the method exists, but it does not do any real work yet.
 
-![OrderCalculator.cs showing NotImplementedException](image-32.png)
+![OrderCalculator.cs showing NotImplementedException](assets/screenshots/part3-01-notimplementedexception.png)
 
 
 
@@ -309,7 +309,7 @@ Find this test:
 
 - `FormatPackingSlip_ReturnsOneLinePerItem`
 
-![FormatPackingSlip_ReturnsOneLinePerItem test](image-33.png)
+![FormatPackingSlip_ReturnsOneLinePerItem test](assets/screenshots/part3-02-formatpackingslip-test-skipped.png)
 
 
 Remove the `Skip = ...` part from the `[Fact]` attribute for that test so the test can run.
@@ -326,7 +326,7 @@ to this:
 ```csharp
 [Fact]
 ```
-![FormatPackingSlip_ReturnsOneLinePerItem test](image-34.png)
+![FormatPackingSlip_ReturnsOneLinePerItem test](assets/screenshots/part3-03-formatpackingslip-test-enabled.png)
 
 
 ### Step 3.2: Run only that test
@@ -337,7 +337,7 @@ Run:
 dotnet test --filter FormatPackingSlip
 ```
 
-![Terminal showing the FormatPackingSlip test command](image-36.png)
+![Terminal showing the FormatPackingSlip test command](assets/screenshots/part3-04-formatpackingslip-test-command.png)
 
 The test should fail. That is expected.
 
@@ -375,10 +375,9 @@ If you get stuck, use this prompt:
 #selection Implement this method so it returns a packing slip string with a title and numbered lines for each item. Keep the output deterministic and handle null input.
 ```
 
-![Copilot prompt for implementing FormatPackingSlip](image-37.png)
+![Copilot prompt for implementing FormatPackingSlip](assets/screenshots/part3-05-formatpackingslip-copilot-prompt.png)
 
-
->> Make sure to click the keep button to make you chnages persistent in the file. If you click the discard button, the code will not be added to the file and you will need to ask again.
+Important: click `Keep` if you want the change to stay in the file. If you click `Discard`, the code will not be saved and you will need to ask again.
 
 
 What to watch for in the answer:
@@ -416,7 +415,7 @@ Then run the full suite again:
 dotnet test
 ```
 
-![Terminal showing the FormatPackingSlip test passing and one test still skipped](image-38.png)
+![Terminal showing the FormatPackingSlip test passing and one test still skipped](assets/screenshots/part3-06-formatpackingslip-test-pass.png)
 
 
 Expected result now:
@@ -444,7 +443,7 @@ Find this test:
 
 - `CalculateDiscount_GivesTenPercentDiscountToLargeLoyaltyOrders`
 
-![OrderCalculatorTests.cs showing the discount test](image-39.png)
+![OrderCalculatorTests.cs showing the discount test](assets/screenshots/part4-01-discount-test.png)
 
 
 
@@ -464,12 +463,12 @@ to:
 [Fact]
 ```
 
-![Discount test with the Skip attribute removed](image-40.png)
+![Discount test with the Skip attribute removed](assets/screenshots/part4-02-discount-test-enabled.png)
 
 1. Remove the `Skip = ...` text.
 2. Save the file.
 
-![VS Code File menu showing Save All](image-41.png)
+![VS Code File menu showing Save All](assets/screenshots/part4-03-save-all-menu.png)
 
 
 ### Step 4.2: Run only the discount test
@@ -480,7 +479,7 @@ Run:
 dotnet test --filter CalculateDiscount
 ```
 
-![Terminal running the CalculateDiscount test filter](image-42.png)
+![Terminal running the CalculateDiscount test filter](assets/screenshots/part4-04-discount-test-command.png)
 
 **It should fail.**
 
@@ -490,7 +489,7 @@ This is the moment where the test becomes evidence. The failure message tells yo
 
 Open `app/src/StoreApp/OrderCalculator.cs` and look at `CalculateDiscount`.
 
-![OrderCalculator.cs open with CalculateDiscount visible](image-43.png)
+![OrderCalculator.cs open with CalculateDiscount visible](assets/screenshots/part4-05-calculatediscount-open.png)
 
 
 Ask Copilot:
@@ -499,14 +498,14 @@ Ask Copilot:
 I have a failing test named CalculateDiscount_GivesTenPercentDiscountToLargeLoyaltyOrders. Look at the current CalculateDiscount method and suggest the smallest code change needed to make the test pass.
 ```
 
-![Copilot prompt asking for the smallest discount fix](image-44.png)
+![Copilot prompt asking for the smallest discount fix](assets/screenshots/part4-06-discount-fix-prompt.png)
 
 
 ### Step 4.4: Fix the bug
 
 Apply the smallest fix you can.
 
-![Copilot suggestion for updating CalculateDiscount](image-45.png)
+![Copilot suggestion for updating CalculateDiscount](assets/screenshots/part4-07-discount-fix-suggestion.png)
 
 Keep these ideas in mind while you work:
 
@@ -515,7 +514,7 @@ Keep these ideas in mind while you work:
 3. Make the smallest change that matches the test evidence.
 4. If a suggestion feels too large or unrelated, stop and review the test again.
 
-![Updated CalculateDiscount code after applying the fix](image-46.png)
+![Updated CalculateDiscount code after applying the fix](assets/screenshots/part4-08-discount-fix-applied.png)
 
 Save your changes before running the tests again.
 
@@ -529,7 +528,7 @@ dotnet test --filter CalculateDiscount
 dotnet test
 ```
 
-![Terminal showing the discount test and full test suite passing](image-47.png)
+![Terminal showing the discount test and full test suite passing](assets/screenshots/part4-09-discount-tests-pass.png)
 
 Expected result now:
 
@@ -561,17 +560,17 @@ in `app/src/StoreApp/OrderCalculator.cs`
 2. Select the method body.
 3. Use this prompt:
 
-![BuildOrderSummary selected in the editor](image-48.png)
+![BuildOrderSummary selected in the editor](assets/screenshots/part5-01-buildordersummary-selected.png)
 
 ```text
 #selection Refactor this method to improve readability without changing behavior. Keep it beginner-friendly and avoid unnecessary complexity.
 ```
-![Refactor prompt entered in Copilot Chat](image-49.png)
+![Refactor prompt entered in Copilot Chat](assets/screenshots/part5-02-refactor-prompt.png)
 
 
 ### Step 5.2: Review the suggestion before accepting it
 
-![Copilot showing a refactor suggestion for BuildOrderSummary](image-51.png)
+![Copilot showing a refactor suggestion for BuildOrderSummary](assets/screenshots/part5-03-refactor-suggestion.png)
 
 Check for these things:
 
@@ -584,7 +583,7 @@ Good rule:
 - If a refactor makes the code harder to explain, it is probably not a good beginner-friendly refactor.
 
 If you are happy with the suggestion, accept it to apply the change to the file.
-![Refactor suggestion applied in the editor](image-50.png)
+![Refactor suggestion applied in the editor](assets/screenshots/part5-04-refactor-applied.png)
 
 ### Step 5.3: Run the tests again
 
@@ -594,7 +593,7 @@ Run:
 dotnet test
 ```
 
-![Terminal showing tests passing after the refactor](image-52.png)
+![Terminal showing tests passing after the refactor](assets/screenshots/part5-05-refactor-tests-pass.png)
 
 
 If the tests still pass, your refactor preserved behavior.
