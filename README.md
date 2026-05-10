@@ -107,12 +107,19 @@ If this is your first time opening VS Code, follow these steps slowly. You do no
 ![Choose the workspace folder](image-12.png)
 
 13. If VS Code asks whether you trust the authors of this folder, choose to trust the workspace.
+![Trust the workspace](image-13.png)
 
-14. If you are not already signed in to GitHub inside VS Code, do this now:
+14. There is no need to update any extensions for this lab, please close that window.
+![Extensions update prompt](image-14.png)
+
+
+15. If you are not already signed in to GitHub inside VS Code, do this now:
 
    1. Open the Command Palette with `Ctrl+Shift+P`.
-   2. Run `GitHub: Sign in`.
-   3. Complete the sign-in steps in the browser.
+   2. Type `gith` to filter the command list.
+   ![Command Palette filtered for GitHub](image-15.png)
+   3. Select `GitHub: Sign in`.
+   4. Complete the sign-in steps in the browser.
 
 After that, make sure the GitHub Copilot extension is available.
 
