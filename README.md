@@ -416,7 +416,7 @@ Then run the full suite again:
 dotnet test
 ```
 
-![alt text](image-38.png)
+![Terminal showing the FormatPackingSlip test passing and one test still skipped](image-38.png)
 
 
 Expected result now:
@@ -444,7 +444,7 @@ Find this test:
 
 - `CalculateDiscount_GivesTenPercentDiscountToLargeLoyaltyOrders`
 
-![alt text](image-39.png)
+![OrderCalculatorTests.cs showing the discount test](image-39.png)
 
 
 
@@ -464,11 +464,12 @@ to:
 [Fact]
 ```
 
-![alt text](image-40.png)
+![Discount test with the Skip attribute removed](image-40.png)
 
-From the file menu choose save all
+1. Remove the `Skip = ...` text.
+2. Save the file.
 
-![alt text](image-41.png)
+![VS Code File menu showing Save All](image-41.png)
 
 
 ### Step 4.2: Run only the discount test
@@ -479,7 +480,7 @@ Run:
 dotnet test --filter CalculateDiscount
 ```
 
-![alt text](image-42.png)
+![Terminal running the CalculateDiscount test filter](image-42.png)
 
 **It should fail.**
 
@@ -489,7 +490,7 @@ This is the moment where the test becomes evidence. The failure message tells yo
 
 Open `app/src/StoreApp/OrderCalculator.cs` and look at `CalculateDiscount`.
 
-![alt text](image-43.png)
+![OrderCalculator.cs open with CalculateDiscount visible](image-43.png)
 
 
 Ask Copilot:
@@ -498,22 +499,25 @@ Ask Copilot:
 I have a failing test named CalculateDiscount_GivesTenPercentDiscountToLargeLoyaltyOrders. Look at the current CalculateDiscount method and suggest the smallest code change needed to make the test pass.
 ```
 
-![alt text](image-44.png)
+![Copilot prompt asking for the smallest discount fix](image-44.png)
 
 
 ### Step 4.4: Fix the bug
 
 Apply the smallest fix you can.
 
-![alt text](image-45.png)
+![Copilot suggestion for updating CalculateDiscount](image-45.png)
 
->> Because Copilot is non-deterministic, we may see slightly different behaviors. Notice here it is instructing us to make the change and not actually making the change itself. That is a good reminder that you should always review the suggestions and understand them before accepting them.
+Keep these ideas in mind while you work:
 
->> You may see different suggestions from Copilot. The important thing is to understand the test, understand the code, and make a small change that is supported by the evidence you have.
+1. Copilot may suggest slightly different solutions each time.
+2. Read the suggestion before you accept it.
+3. Make the smallest change that matches the test evidence.
+4. If a suggestion feels too large or unrelated, stop and review the test again.
 
-![alt text](image-46.png)
+![Updated CalculateDiscount code after applying the fix](image-46.png)
 
-Save changes.
+Save your changes before running the tests again.
 
 
 ### Step 4.5: Confirm the fix
@@ -525,7 +529,7 @@ dotnet test --filter CalculateDiscount
 dotnet test
 ```
 
-![alt text](image-47.png)
+![Terminal showing the discount test and full test suite passing](image-47.png)
 
 Expected result now:
 
@@ -553,19 +557,21 @@ in `app/src/StoreApp/OrderCalculator.cs`
 
 ### Step 5.1: Ask for a small refactor
 
-Select the method body and use this prompt:
+1. Open `BuildOrderSummary` in `app/src/StoreApp/OrderCalculator.cs`.
+2. Select the method body.
+3. Use this prompt:
 
-![alt text](image-48.png)
+![BuildOrderSummary selected in the editor](image-48.png)
 
 ```text
 #selection Refactor this method to improve readability without changing behavior. Keep it beginner-friendly and avoid unnecessary complexity.
 ```
-![alt text](image-49.png)
+![Refactor prompt entered in Copilot Chat](image-49.png)
 
 
 ### Step 5.2: Review the suggestion before accepting it
 
-![alt text](image-51.png)
+![Copilot showing a refactor suggestion for BuildOrderSummary](image-51.png)
 
 Check for these things:
 
@@ -578,7 +584,7 @@ Good rule:
 - If a refactor makes the code harder to explain, it is probably not a good beginner-friendly refactor.
 
 If you are happy with the suggestion, accept it to apply the change to the file.
-![alt text](image-50.png)
+![Refactor suggestion applied in the editor](image-50.png)
 
 ### Step 5.3: Run the tests again
 
@@ -587,7 +593,8 @@ Run:
 ```powershell
 dotnet test
 ```
-![alt text](image-52.png)
+
+![Terminal showing tests passing after the refactor](image-52.png)
 
 
 If the tests still pass, your refactor preserved behavior.
