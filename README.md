@@ -34,6 +34,8 @@ If those terms are new, here is the short version:
 - GitHub Copilot is the AI assistant you will use inside VS Code.
  
 
+**If you do not have a GitHub account yet, you can create one here: [GitHub sign-up](https://github.com/signup).**
+
 Learn more:
 
 - [Set up GitHub Copilot in VS Code](https://code.visualstudio.com/docs/copilot/setup)
@@ -169,21 +171,6 @@ If VS Code suggests updating extensions, you do not need to do that for this lab
 ![VS Code extensions update prompt](assets/screenshots/part0-14-extensions-update-prompt.png)
 
  
-### Step 0.15: Sign in from the Command Palette if needed
-
-If you are not already signed in to GitHub inside VS Code, do this now:
- 
-
-   1. Open the Command Palette with `Ctrl+Shift+P`.
-   2. Type `gith` to narrow the list of commands.
-   3. Select `GitHub: Sign in`.
-   4. Complete the sign-in steps in the browser.
-
-   ![Command Palette showing GitHub sign-in options](assets/screenshots/part0-15-command-palette-github-signin.png)
- 
-
-After that, make sure the GitHub Copilot extension is available in VS Code.
-
 
 Learning note:
 
