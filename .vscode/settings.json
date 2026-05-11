@@ -1,0 +1,13 @@
+{
+  // This is the value for our predefined MCP server.
+  // Uncomment this block for the MCP server to be available in VS Code.
+  // "mcpServers": {
+  //   "lab-server": {
+  //     "url": "https://func-xxxxx.azurewebsites.net/mcp",
+  //     "transport": "http",
+  //     "headers": {
+  //       "X-API-Key": "lab-mcp-key-xxxxx"
+  //     }
+  //   }
+  // }
+}
