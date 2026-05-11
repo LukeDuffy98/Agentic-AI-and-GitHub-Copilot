@@ -1032,9 +1032,78 @@ Why this is more advanced:
 
 Try one of these:
 
-1. Add a test for invalid input to `FormatPackingSlip`.
-2. Ask Copilot to suggest a better name for one method and explain why.
-3. Add a new summary line to `BuildOrderSummary`, then update tests to match.
+1. Add one new test for invalid input to `FormatPackingSlip`.
+
+   Prompt:
+
+   ```text
+   @workspace Look at app/src/StoreApp/OrderCalculator.cs and app/tests/StoreApp.Tests/OrderCalculatorTests.cs. Suggest one high-value invalid-input test for FormatPackingSlip, explain why it matters, and draft the smallest xUnit test I should add first.
+   ```
+
+2. Review the method names in `OrderCalculator` and improve one if the current name is unclear.
+
+   Prompt:
+
+   ```text
+   #editor Review the method names in this file from a beginner's point of view. Which name is the least clear, what would be a better replacement, and why? Keep the suggestion practical and avoid renaming things that are already clear.
+   ```
+
+3. Add one extra line to `BuildOrderSummary`, such as total quantity or loyalty status, and update tests to match.
+
+   Prompt:
+
+   ```text
+   @workspace Inspect BuildOrderSummary and the related tests. Suggest one useful extra summary line that fits the current StoreApp design, then show the smallest code and test changes needed to support it.
+   ```
+
+4. Build a Mermaid diagram that shows how `Program.cs`, `OrderItem`, and `OrderCalculator` work together.
+
+   Prompt:
+
+   ```text
+   @workspace Read app/src/StoreApp/Program.cs, app/src/StoreApp/OrderItem.cs, and app/src/StoreApp/OrderCalculator.cs. Create a Mermaid diagram that shows the main classes, the flow of data through the app, and which OrderCalculator methods are used to produce the final output.
+   ```
+
+    Example Mermaid output:
+
+    ```mermaid
+    flowchart TD
+          P[Program.cs] --> L[Create sampleOrder : List<OrderItem>]
+          L --> OI[OrderItem\nName\nUnitPrice\nQuantity]
+          P --> C[Create OrderCalculator]
+          P --> B[BuildOrderSummary(sampleOrder, true)]
+
+          B --> S1[CalculateSubtotal(orderItems)]
+          B --> S2[CalculateDiscount(subtotal, isLoyaltyMember)]
+          B --> S3[CalculateShipping(subtotal)]
+
+          S1 --> T[Compute total]
+          S2 --> T
+          S3 --> T
+
+          T --> F[Format summary text with StringBuilder]
+          F --> OUT[Console.WriteLine(final output)]
+
+          C -. also exposes .-> FP[FormatPackingSlip(items)]
+          FP -. not used by current Program flow .-> OUT
+    ```
+
+5. Plan how this project could be deployed to Azure, then ask for a starter Bicep template for the most sensible option.
+
+   Prompt:
+
+   ```text
+   @workspace Inspect the current StoreApp code and explain what kind of application it is today. Then recommend the simplest realistic Azure deployment approach, explain any changes the app would need first, and draft a beginner-friendly starter Bicep template for that deployment plan.
+   ```
+
+6. Review `OrderCalculator` for code quality issues, then fix one small issue safely.
+
+   Prompt:
+
+   ```text
+   @workspace Review app/src/StoreApp/OrderCalculator.cs for small but real code quality issues, such as unclear naming, duplicated logic, fragile formatting, or missing validation. Rank the top three findings, then suggest the safest one to fix first with the smallest possible change.
+   ```
+
 
 ## Support files
 
