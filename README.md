@@ -1068,24 +1068,24 @@ Try one of these:
 
     ```mermaid
     flowchart TD
-          P[Program.cs] --> L[Create sampleOrder : List<OrderItem>]
-          L --> OI[OrderItem\nName\nUnitPrice\nQuantity]
-          P --> C[Create OrderCalculator]
-          P --> B[BuildOrderSummary(sampleOrder, true)]
+         P["Program.cs"] --> L["Create sampleOrder as List of OrderItem"]
+         L --> OI["OrderItem\nName\nUnitPrice\nQuantity"]
+         P --> C["Create OrderCalculator"]
+         P --> B["Call BuildOrderSummary"]
 
-          B --> S1[CalculateSubtotal(orderItems)]
-          B --> S2[CalculateDiscount(subtotal, isLoyaltyMember)]
-          B --> S3[CalculateShipping(subtotal)]
+         B --> S1["CalculateSubtotal"]
+         B --> S2["CalculateDiscount"]
+         B --> S3["CalculateShipping"]
 
-          S1 --> T[Compute total]
-          S2 --> T
-          S3 --> T
+         S1 --> T["Compute total"]
+         S2 --> T
+         S3 --> T
 
-          T --> F[Format summary text with StringBuilder]
-          F --> OUT[Console.WriteLine(final output)]
+         T --> F["Build summary text with StringBuilder"]
+         F --> OUT["Write final output to console"]
 
-          C -. also exposes .-> FP[FormatPackingSlip(items)]
-          FP -. not used by current Program flow .-> OUT
+         C -.-> FP["FormatPackingSlip"]
+         FP -. not used by current Program flow .-> OUT
     ```
 
 5. Plan how this project could be deployed to Azure, then ask for a starter Bicep template for the most sensible option.
