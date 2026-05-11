@@ -385,7 +385,14 @@ to this:
 ![FormatPackingSlip_ReturnsOneLinePerItem test](assets/screenshots/part3-03-formatpackingslip-test-enabled.png)
 
 
+**Save the file.**
+
+![VS Code File menu showing Save All](assets/screenshots/part4-03-save-all-menu.png)
+
+
 ### Step 3.2: Run only that test
+
+>> We expect a failure here because the method is not implemented yet. That failure is useful because it gives you a clear target for what to implement.
 
 Run:
 
@@ -417,6 +424,8 @@ Why failure is useful:
 - This is part of a common workflow: fail first, then implement, then verify.
 
 ### Step 3.3: Ask Copilot for help
+
+Navigate back to the OrderCalculator.cs file and find the `FormatPackingSlip` method again.
 
 Place your cursor inside `FormatPackingSlip` and try one of these approaches.
 
@@ -528,6 +537,8 @@ to:
 
 
 ### Step 4.2: Run only the discount test
+
+>> We expect a failure here because there is a real bug in the code. That failure is useful because it gives you clear evidence of what is wrong and what to fix.
 
 Run:
 
