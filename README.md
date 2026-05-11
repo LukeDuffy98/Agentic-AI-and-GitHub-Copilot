@@ -697,19 +697,34 @@ Open this file:
 
 - `assets/mcp-server.sample.json`
 
+![Sample MCP configuration file open in the editor](assets/screenshots/part6-01-mcp-sample-config-open.png)
+
 Your instructor can give you:
 
 - the real server URL
 - the API key or other authentication value
-- the exact place in VS Code where this JSON should be added
 
-Replace the placeholder values with the real ones.
+Replace the placeholder values in the sample file with the real connection details your instructor provides.
+
+If you are working from a commented example in another file or settings page, you may need to uncomment the server block first. In VS Code, you can use **Edit > Toggle Line Comment** or remove the `//` characters manually.
+
+![MCP server block being uncommented in VS Code](assets/screenshots/part6-02-uncomment-mcp-server.png)
+
+![MCP connection details filled in with instructor-provided values](assets/screenshots/part6-03-fill-mcp-connection-details.png)
 
 What this config does:
 
 - it gives VS Code a named MCP server connection
 - it tells VS Code where the server lives
 - it optionally provides authentication headers so the server accepts requests
+
+**Save your changes.**
+
+![VS Code File menu showing Save All](assets/screenshots/part6-04-save-mcp-config.png)
+
+In the MCP Servers view, you should see the server you just configured. Select **Start** and wait for it to finish starting before you continue.
+
+![MCP Servers view showing the Start option](assets/screenshots/part6-05-start-mcp-server.png)
 
 ### Step 6.2: Ask Copilot to use tools
 
@@ -718,6 +733,19 @@ Once MCP is connected, try this prompt:
 ```text
 Use the available tools to find the method that calculates discounts in this lab, explain how it works, and tell me the safest place to change the discount rule.
 ```
+
+![Copilot Chat showing the MCP tool-using prompt](assets/screenshots/part6-06-mcp-tool-prompt.png)
+
+Depending on your Copilot settings, you may need to approve tool use for this session.
+
+![Prompt asking you to approve MCP tool use](assets/screenshots/part6-07-mcp-tool-approval.png)
+
+After you run the prompt, you should see Copilot using tools to fetch extra context, such as file contents or search results, to answer the question. You may be prompted to allow each tool action, which is a good opportunity to review what Copilot is doing step by step.
+
+You should end up seeing a response like this, where Copilot explains the discount code and suggests a safe place to change it:
+
+![Copilot response after using MCP tools to inspect the discount code](assets/screenshots/part6-08-mcp-tool-response.png)
+
 
 ### Step 6.3: Observe the difference
 
