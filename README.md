@@ -722,6 +722,87 @@ Learn more:
 - [Use an MCP tool in Visual Studio Code](https://learn.microsoft.com/azure/sentinel/datalake/sentinel-mcp-use-tool-visual-studio-code)
 - [Connect an MCP server from Visual Studio Code](https://learn.microsoft.com/azure/app-service/configure-authentication-mcp-server-vscode#connect-from-visual-studio-code)
 
+
+
+## Extra practice if you finish early
+
+Try one of these:
+
+1. Add one new test for invalid input to `FormatPackingSlip`.
+
+   Prompt:
+
+   ```text
+   @workspace Look at app/src/StoreApp/OrderCalculator.cs and app/tests/StoreApp.Tests/OrderCalculatorTests.cs. Suggest one high-value invalid-input test for FormatPackingSlip, explain why it matters, and draft the smallest xUnit test I should add first.
+   ```
+
+2. Review the method names in `OrderCalculator` and improve one if the current name is unclear.
+
+   Prompt:
+
+   ```text
+   #editor Review the method names in this file from a beginner's point of view. Which name is the least clear, what would be a better replacement, and why? Keep the suggestion practical and avoid renaming things that are already clear.
+   ```
+
+3. Add one extra line to `BuildOrderSummary`, such as total quantity or loyalty status, and update tests to match.
+
+   Prompt:
+
+   ```text
+   @workspace Inspect BuildOrderSummary and the related tests. Suggest one useful extra summary line that fits the current StoreApp design, then show the smallest code and test changes needed to support it.
+   ```
+
+4. Build a Mermaid diagram that shows how `Program.cs`, `OrderItem`, and `OrderCalculator` work together.
+
+   Prompt:
+
+   ```text
+   @workspace Read app/src/StoreApp/Program.cs, app/src/StoreApp/OrderItem.cs, and app/src/StoreApp/OrderCalculator.cs. Create a Mermaid diagram that shows the main classes, the flow of data through the app, and which OrderCalculator methods are used to produce the final output.
+   ```
+
+    Example Mermaid output:
+
+    ```mermaid
+    flowchart TD
+         P["Program.cs"] --> L["Create sampleOrder as List of OrderItem"]
+         L --> OI["OrderItem\nName\nUnitPrice\nQuantity"]
+         P --> C["Create OrderCalculator"]
+         P --> B["Call BuildOrderSummary"]
+
+         B --> S1["CalculateSubtotal"]
+         B --> S2["CalculateDiscount"]
+         B --> S3["CalculateShipping"]
+
+         S1 --> T["Compute total"]
+         S2 --> T
+         S3 --> T
+
+         T --> F["Build summary text with StringBuilder"]
+         F --> OUT["Write final output to console"]
+
+         C -.-> FP["FormatPackingSlip"]
+         FP -. not used by current Program flow .-> OUT
+    ```
+
+5. Plan how this project could be deployed to Azure, then ask for a starter Bicep template for the most sensible option.
+
+   Prompt:
+
+   ```text
+   @workspace Inspect the current StoreApp code and explain what kind of application it is today. Then recommend the simplest realistic Azure deployment approach, explain any changes the app would need first, and draft a beginner-friendly starter Bicep template for that deployment plan.
+   ```
+
+6. Review `OrderCalculator` for code quality issues, then fix one small issue safely.
+
+   Prompt:
+
+   ```text
+   @workspace Review app/src/StoreApp/OrderCalculator.cs for small but real code quality issues, such as unclear naming, duplicated logic, fragile formatting, or missing validation. Rank the top three findings, then suggest the safest one to fix first with the smallest possible change.
+   ```
+
+
+
+
 ## Common problems and what to do
 
 ### `dotnet` does not work
@@ -1027,82 +1108,6 @@ Why this is more advanced:
 
 - it forces you to think about design, naming, and separation of concerns
 - it is easy to create formatting code that works but is hard to maintain
-
-## Extra practice if you finish early
-
-Try one of these:
-
-1. Add one new test for invalid input to `FormatPackingSlip`.
-
-   Prompt:
-
-   ```text
-   @workspace Look at app/src/StoreApp/OrderCalculator.cs and app/tests/StoreApp.Tests/OrderCalculatorTests.cs. Suggest one high-value invalid-input test for FormatPackingSlip, explain why it matters, and draft the smallest xUnit test I should add first.
-   ```
-
-2. Review the method names in `OrderCalculator` and improve one if the current name is unclear.
-
-   Prompt:
-
-   ```text
-   #editor Review the method names in this file from a beginner's point of view. Which name is the least clear, what would be a better replacement, and why? Keep the suggestion practical and avoid renaming things that are already clear.
-   ```
-
-3. Add one extra line to `BuildOrderSummary`, such as total quantity or loyalty status, and update tests to match.
-
-   Prompt:
-
-   ```text
-   @workspace Inspect BuildOrderSummary and the related tests. Suggest one useful extra summary line that fits the current StoreApp design, then show the smallest code and test changes needed to support it.
-   ```
-
-4. Build a Mermaid diagram that shows how `Program.cs`, `OrderItem`, and `OrderCalculator` work together.
-
-   Prompt:
-
-   ```text
-   @workspace Read app/src/StoreApp/Program.cs, app/src/StoreApp/OrderItem.cs, and app/src/StoreApp/OrderCalculator.cs. Create a Mermaid diagram that shows the main classes, the flow of data through the app, and which OrderCalculator methods are used to produce the final output.
-   ```
-
-    Example Mermaid output:
-
-    ```mermaid
-    flowchart TD
-         P["Program.cs"] --> L["Create sampleOrder as List of OrderItem"]
-         L --> OI["OrderItem\nName\nUnitPrice\nQuantity"]
-         P --> C["Create OrderCalculator"]
-         P --> B["Call BuildOrderSummary"]
-
-         B --> S1["CalculateSubtotal"]
-         B --> S2["CalculateDiscount"]
-         B --> S3["CalculateShipping"]
-
-         S1 --> T["Compute total"]
-         S2 --> T
-         S3 --> T
-
-         T --> F["Build summary text with StringBuilder"]
-         F --> OUT["Write final output to console"]
-
-         C -.-> FP["FormatPackingSlip"]
-         FP -. not used by current Program flow .-> OUT
-    ```
-
-5. Plan how this project could be deployed to Azure, then ask for a starter Bicep template for the most sensible option.
-
-   Prompt:
-
-   ```text
-   @workspace Inspect the current StoreApp code and explain what kind of application it is today. Then recommend the simplest realistic Azure deployment approach, explain any changes the app would need first, and draft a beginner-friendly starter Bicep template for that deployment plan.
-   ```
-
-6. Review `OrderCalculator` for code quality issues, then fix one small issue safely.
-
-   Prompt:
-
-   ```text
-   @workspace Review app/src/StoreApp/OrderCalculator.cs for small but real code quality issues, such as unclear naming, duplicated logic, fragile formatting, or missing validation. Rank the top three findings, then suggest the safest one to fix first with the smallest possible change.
-   ```
 
 
 ## Support files
