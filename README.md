@@ -1156,3 +1156,73 @@ These files are included to make the lab easier to follow:
 - `assets/copilot-prompts.md` contains the prompt pack.
 - `assets/checkpoints.md` shows expected progress at each stage.
 - `assets/mcp-server.sample.json` gives you a starter MCP configuration.
+
+## Using your own environment instead of the lab
+
+If you are doing this lab on your own machine instead of in a prepared lab environment, you will need to set up a few things yourself first.
+
+Minimum requirements:
+
+- VS Code installed
+- your own GitHub account
+- access to GitHub Copilot on that GitHub account
+- Git installed so you can clone the repository
+- the .NET 8 SDK installed because this project targets `net8.0`
+- internet access so VS Code can sign in to GitHub and load extensions
+
+Why these matter:
+
+- VS Code is the editor used throughout the instructions.
+- Your GitHub account is needed to sign in to GitHub and use Copilot.
+- Git is the easiest way to get the repository and keep it up to date.
+- The .NET SDK is required to run `dotnet test` and build the code.
+
+### Clone the repository in VS Code
+
+If you are starting from scratch on your own machine, use this workflow.
+
+1. Install VS Code, Git, and the .NET 8 SDK if you do not already have them.
+2. Open VS Code.
+3. Sign in with your GitHub account if VS Code prompts you.
+4. Open the Command Palette with `Ctrl+Shift+P`.
+5. Run `Git: Clone`.
+6. Copy the repository URL from GitHub.
+7. Paste the repository URL into VS Code.
+8. Choose a local folder where you want the repository to be stored.
+9. Wait for the clone to finish.
+10. When VS Code asks whether you want to open the cloned repository, choose `Open`.
+11. If prompted, trust the workspace.
+12. If VS Code recommends extensions, allow the GitHub Copilot and C# related extensions to install.
+
+After the repository opens, create a terminal in VS Code and run:
+
+```powershell
+cd app
+dotnet test
+```
+
+If that works, your environment is ready for the rest of the lab.
+
+### Recommended extras on your own machine
+
+These are not strictly the main point of the lab, but they will make the experience smoother:
+
+- make sure the GitHub Copilot extension is installed and signed in
+- make sure the C# extension or C# Dev Kit is installed so VS Code understands the project well
+- use a normal `git clone` workflow rather than downloading the repository as a ZIP
+- expect some screenshots or prompts to look slightly different from the lab machines
+- if you do not have MCP server details, you may need to skip Part 6 or replace it with your own MCP server
+
+### Quick self-check before starting
+
+Before you begin Part 1, confirm that:
+
+- the repository opens in VS Code
+- Copilot Chat is available
+- `dotnet test` runs successfully from the `app` folder
+- you can open `app/src/StoreApp/OrderCalculator.cs` and `app/tests/StoreApp.Tests/OrderCalculatorTests.cs`
+
+If all of those are true, you can follow the rest of the README normally.
+
+
+
