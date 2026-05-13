@@ -695,7 +695,7 @@ Learning note:
 
 Open this file:
 
-- `assets/mcp-server.sample.json`
+- `.vscode/mcp.json`
 
 ![Sample MCP configuration file open in the editor](assets/screenshots/part6-01-mcp-sample-config-open.png)
 
