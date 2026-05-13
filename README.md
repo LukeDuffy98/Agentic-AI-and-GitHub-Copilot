@@ -728,6 +728,8 @@ In the MCP Servers view, you should see the server you just configured. Select *
 
 ### Step 6.2: Ask Copilot to use tools
 
+>> Create a new chat before continuing for the tools to be recognised.
+
 Once MCP is connected, try this prompt:
 
 ```text
